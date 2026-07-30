@@ -1,9 +1,33 @@
 aid: media-radar
 name: Media Radar
-description: 'Media Radar is a company surfaced as a portfolio company of bain-capital-ventures and added
-  to the API Evangelist network as a stub for enrichment. Sector: commerce. This profile is a lead awaiting
-  the enrichment pipeline.'
+description: >-
+  MediaRadar (now incorporating the data and capabilities of Vivvix) is a
+  marketing and advertising intelligence platform that tracks advertising
+  investment, creative, and brand activity across streaming and linear TV,
+  digital and programmatic, social, retail media, out-of-home, radio, podcast,
+  and print. It serves brands, agencies, publishers, platforms, and
+  consultancies with competitive, commercial, creative, market, and political
+  ad intelligence used to inform mission-critical marketing and sales decisions.
+  MediaRadar delivers its data through a web UX, data feeds, and a client REST
+  API. The MediaRadar Client API Portal is a private Azure API Management
+  developer portal gated behind client sign-in; API endpoints and schemas are
+  not published publicly, and integrations authenticate with a per-client API
+  Key. This profile was surfaced as a portfolio company of Bain Capital Ventures
+  and enriched by the API Evangelist pipeline.
 url: https://raw.githubusercontent.com/api-evangelist/media-radar/refs/heads/main/apis.yml
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://www.mediaradar.com/hubfs/Website%20Featured%20Image.png
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
@@ -12,10 +36,16 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-20'
 tags:
 - Company
 - Commerce
+- Advertising Intelligence
+- Marketing Intelligence
+- Competitive Intelligence
+- Advertising
+- Media
+- Data
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -24,4 +54,27 @@ maintainers:
   email: info@apis.io
 common:
 - type: Website
-  url: https://mediaradar.com/
+  url: https://www.mediaradar.com/
+- type: DeveloperPortal
+  url: https://api-portal.mediaradar.com/
+- type: SignUp
+  url: https://api-portal.mediaradar.com/signin
+- type: Blog
+  url: https://www.mediaradar.com/blog
+- type: TermsOfService
+  url: https://www.mediaradar.com/terms
+- type: PrivacyPolicy
+  url: https://www.mediaradar.com/privacy
+- type: Authentication
+  url: authentication/media-radar-authentication.yml
+- type: DomainSecurity
+  url: security/media-radar-domain-security.yml
+- type: TrustCenter
+  url: security/media-radar-trust-center.yml
+- type: Compliance
+  url: https://trust.mediaradar.com/
+x-enrichment:
+  date: '2026-07-20'
+  status: enriched
+  artifacts_added: 3
+  pass: local-v1
