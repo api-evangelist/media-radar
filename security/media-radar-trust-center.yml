@@ -1,0 +1,19 @@
+generated: '2026-07-20'
+method: searched
+probe: true
+source: https://trust.mediaradar.com/
+url: https://trust.mediaradar.com/
+monitoring: Secureframe
+certifications:
+- SOC 2 Type I
+notes: >-
+  MediaRadar maintains SOC 2 Type I certification, independently audited annually
+  by a qualified third-party firm. Security posture and controls are continuously
+  monitored via Secureframe. No additional named frameworks (ISO 27001, PCI DSS,
+  HIPAA, GDPR, CCPA) are published on the trust center page.
+evidence:
+- source: https://trust.mediaradar.com/
+  keywords:
+  - soc 2 type i
+  - secureframe
+  - trust center

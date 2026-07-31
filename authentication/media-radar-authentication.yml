@@ -1,0 +1,29 @@
+generated: '2026-07-20'
+method: searched
+source: https://api-portal.mediaradar.com/
+docs: https://api-portal.mediaradar.com/
+summary:
+  types:
+  - apiKey
+  api_key_in:
+  - header
+  oauth2_flows: []
+notes: >-
+  MediaRadar exposes its data through the MediaRadar Client API Portal, a private
+  Azure API Management developer portal (api-portal.mediaradar.com). Access is
+  gated behind a client sign-in / OAuth sign-up; API definitions, endpoints, and
+  request/response schemas are not published publicly. Documentation confirms
+  authentication is performed with a per-client API Key. As an Azure API
+  Management surface the key is supplied as a subscription-key request header
+  (Ocp-Apim-Subscription-Key by APIM default). No OpenAPI spec was publicly
+  retrievable to mechanically derive securitySchemes, so this profile is sourced
+  from the provider's public portal and integration guidance rather than a spec.
+schemes:
+- name: apiKey
+  type: apiKey
+  in: header
+  description: >-
+    Per-client MediaRadar API Key issued through the Client API Portal, presented
+    as an Azure API Management subscription key header on each request.
+  sources:
+  - https://api-portal.mediaradar.com/
