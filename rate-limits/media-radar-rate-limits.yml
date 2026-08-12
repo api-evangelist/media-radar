@@ -1,0 +1,22 @@
+generated: '2026-08-12'
+method: searched
+source: https://api-portal.mediaradar.com/
+limit_count: 0
+limits: []
+headers: []
+note: >-
+  No rate limits are published anywhere on MediaRadar's public surface. The MediaRadar
+  Client API Portal is an Azure API Management developer portal whose API and product
+  listings are not exposed to anonymous visitors — the portal's own management
+  endpoint returns an EMPTY collection unauthenticated
+  (GET /developer/apis?api-version=2022-04-01-preview -> 200 {"value":[],"nextLink":null}),
+  so no product-level quota, subscription limit, or rate-limit policy can be read
+  without a client account. Azure APIM enforces quotas through rate-limit-by-key /
+  quota-by-key policies and signals exhaustion with HTTP 429 plus a Retry-After
+  header, but MediaRadar publishes no statement of its configured values, so nothing
+  is asserted here. Recorded as an honest zero: limits almost certainly exist per
+  client subscription, but they are not published.
+evidence:
+- {url: 'https://api-portal.mediaradar.com/developer/apis?api-version=2022-04-01-preview', status: 200, note: 'empty value[] — zero APIs visible anonymously'}
+- {url: 'https://api-portal.mediaradar.com/developer/products?api-version=2022-04-01-preview', status: 200, note: 'empty value[] — zero products/quota tiers visible anonymously'}
+- {url: 'https://api.mediaradar.com/', status: 404, note: 'Azure APIM gateway envelope; no rate-limit response headers on an unrouted request'}

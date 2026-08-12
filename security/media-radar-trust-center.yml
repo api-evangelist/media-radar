@@ -1,19 +1,49 @@
-generated: '2026-07-20'
+generated: '2026-08-12'
 method: searched
 probe: true
 source: https://trust.mediaradar.com/
 url: https://trust.mediaradar.com/
-monitoring: Secureframe
+platform: Secureframe
+monitoring: Continuously monitored by Secureframe
 certifications:
 - SOC 2 Type I
+documents:
+- {name: SOC 2 Type 1 Audit Report - 2024, access: request-under-nda}
+- {name: VAPT Pentest Executive Summary - 2026, access: request-under-nda}
+- {name: MediaRadar Privacy Policy, access: public, url: 'https://www.mediaradar.com/privacy'}
+control_families:
+- Change Management
+- Availability
+- Organizational Management
+- Confidentiality
+- Vulnerability Management
+- Incident Response
+- Risk Assessment
+- Network Security
+- Access Security
+- Physical Security
+program:
+  owner: VP of Technology
+  security_team: dedicated
+  mfa: mandatory for all employees; SSO integration offered to customers
+  access_control: RBAC, least privilege, quarterly privileged / annual standard reviews
+  pentest_cadence: at least annually, third-party, network + application + social engineering
+  incident_response_plan: documented, tabletop-exercised
+  data_residency: United States
 notes: >-
-  MediaRadar maintains SOC 2 Type I certification, independently audited annually
-  by a qualified third-party firm. Security posture and controls are continuously
-  monitored via Secureframe. No additional named frameworks (ISO 27001, PCI DSS,
-  HIPAA, GDPR, CCPA) are published on the trust center page.
+  MediaRadar runs a Secureframe-hosted trust center with one named certification —
+  SOC 2 Type I, audited annually over a 12-month observation period against the
+  Security, Availability and Confidentiality Trust Services Criteria. No ISO 27001,
+  PCI DSS, HIPAA, FedRAMP, GDPR or CCPA attestation is named. Both the SOC 2 report
+  and the 2026 VAPT penetration-test executive summary are gated behind an NDA
+  request flow. The trust center publishes NO security contact address and NO
+  vulnerability-disclosure or responsible-disclosure policy, which is why no
+  `Security` / `VulnerabilityDisclosure` pointer is wired in apis.yml.
 evidence:
 - source: https://trust.mediaradar.com/
   keywords:
   - soc 2 type i
   - secureframe
+  - vapt pentest executive summary - 2026
   - trust center
+  - vulnerability management

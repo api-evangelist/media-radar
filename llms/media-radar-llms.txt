@@ -1,0 +1,92 @@
+# MediaRadar
+
+> MediaRadar (incorporating the data and capabilities of Vivvix) is a marketing and
+> advertising intelligence platform that tracks advertising investment, creative and
+> brand activity across streaming and linear TV, digital and programmatic, social,
+> retail media, out-of-home, radio, podcast and print. It serves brands, agencies,
+> publishers, platforms and consultancies with competitive, commercial, creative,
+> market and political ad intelligence. MediaRadar delivers its data through a web
+> UX, data feeds and a client REST API.
+
+## Important for agents
+
+- **There is no public API contract.** MediaRadar publishes no OpenAPI, Swagger,
+  GraphQL, AsyncAPI, MCP or A2A artifact on any host it controls. Do not attempt to
+  synthesize one.
+- **The API is customer-gated.** The MediaRadar Client API Portal
+  (https://api-portal.mediaradar.com/) is an Azure API Management developer portal.
+  Its API and product catalog is not exposed to anonymous visitors: the portal's own
+  management endpoint returns an empty collection unauthenticated
+  (`GET /developer/apis?api-version=2022-04-01-preview` -> `{"value":[],"nextLink":null}`).
+  Endpoints, schemas, quotas and examples are visible only after client sign-in.
+- **Authentication is a per-client API Key**, presented as an Azure API Management
+  subscription-key request header. There is no OAuth 2.0 authorization server; the
+  portal's OAuth flow is account registration for the portal itself.
+- **API base host**: `https://api.mediaradar.com` — confirmed live as an Azure API
+  Management gateway by anonymous probe (it answers unrouted requests with APIM's own
+  `{ "statusCode": 404, "message": "Resource not found" }` envelope and reports a
+  Premium APIM instance in Azure East US 2 at `/internal-status-0123456789abcdef`).
+  Individual operation paths are not published. `https://api.vivvix.com` fronts the
+  same gateway.
+- **No SDK, no CLI, no MCP server, no Postman collection, no status page, no
+  changelog, no published rate limits and no published pricing.** These are verified
+  absences, probed 2026-08-12 — not gaps in this profile.
+
+## APIs
+
+- [MediaRadar Client API](https://api-portal.mediaradar.com/): Client REST API for
+  MediaRadar brand, contacts and advertising data. Azure API Management; per-client
+  API Key; catalog gated behind client sign-in.
+
+## Product
+
+- [MediaRadar](https://www.mediaradar.com/): Company home
+- [Ad Intelligence Platform](https://www.mediaradar.com/ad-intelligence-platform)
+- [Competitive Intelligence](https://www.mediaradar.com/competitive-intelligence)
+- [Commercial Intelligence](https://www.mediaradar.com/commercial-intelligence)
+- [Creative Intelligence](https://www.mediaradar.com/creative-intelligence)
+- [Market Intelligence](https://www.mediaradar.com/market-intelligence)
+- [Political Ad Intelligence](https://www.mediaradar.com/political-ad-intelligence)
+- [Sports Intelligence](https://www.mediaradar.com/sports-intelligence)
+- [CTV & Video Intelligence](https://www.mediaradar.com/ctv-video-intelligence)
+- [MediaRadar Data Cloud](https://www.mediaradar.com/mediaradar-data-cloud)
+
+## Access
+
+- [Client API Portal](https://api-portal.mediaradar.com/)
+- [Portal sign in](https://api-portal.mediaradar.com/signin)
+- [Client sign in](https://www.mediaradar.com/client-sign-in)
+- [Customer support](https://www.mediaradar.com/customer-support)
+- [Speak to a consultant](https://www.mediaradar.com/speak-to-a-consultant)
+
+## Security and legal
+
+- [Trust center](https://trust.mediaradar.com/): SOC 2 Type I, Secureframe-monitored,
+  annual third-party penetration testing
+- [Terms](https://www.mediaradar.com/terms)
+- [Privacy](https://www.mediaradar.com/privacy)
+
+## Packages
+
+- [@mediaradar/design-tokens](https://www.npmjs.com/package/@mediaradar/design-tokens)
+  (npm, 2.0.1, 2026-08-07): first-party design tokens. NOT an API client library.
+
+## API Evangelist profile artifacts
+
+- [apis.yml](https://raw.githubusercontent.com/api-evangelist/media-radar/refs/heads/main/apis.yml)
+- [Authentication](https://raw.githubusercontent.com/api-evangelist/media-radar/refs/heads/main/authentication/media-radar-authentication.yml)
+- [Conformance](https://raw.githubusercontent.com/api-evangelist/media-radar/refs/heads/main/conformance/media-radar-conformance.yml)
+- [Packages](https://raw.githubusercontent.com/api-evangelist/media-radar/refs/heads/main/packages/media-radar-packages.yml)
+- [Plans and pricing](https://raw.githubusercontent.com/api-evangelist/media-radar/refs/heads/main/plans/media-radar-plans-pricing.yml)
+- [Rate limits](https://raw.githubusercontent.com/api-evangelist/media-radar/refs/heads/main/rate-limits/media-radar-rate-limits.yml)
+- [Lifecycle](https://raw.githubusercontent.com/api-evangelist/media-radar/refs/heads/main/lifecycle/media-radar-lifecycle.yml)
+- [Well-known probe](https://raw.githubusercontent.com/api-evangelist/media-radar/refs/heads/main/well-known/media-radar-well-known.yml)
+- [Domain security](https://raw.githubusercontent.com/api-evangelist/media-radar/refs/heads/main/security/media-radar-domain-security.yml)
+- [Trust center](https://raw.githubusercontent.com/api-evangelist/media-radar/refs/heads/main/security/media-radar-trust-center.yml)
+
+<!--
+generated: 2026-08-12
+method: generated
+source: apis.yml + repo artifacts; /llms.txt returned 404 on www.mediaradar.com,
+        api-portal.mediaradar.com, api.mediaradar.com and www.vivvix.com
+-->

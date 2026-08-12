@@ -36,7 +36,7 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-20'
+modified: '2026-08-12'
 tags:
 - Company
 - Commerce
@@ -46,7 +46,42 @@ tags:
 - Advertising
 - Media
 - Data
-apis: []
+apis:
+- name: MediaRadar Client API
+  description: >-
+    The MediaRadar Client API delivers MediaRadar brand, contacts and advertising
+    data to existing clients over REST. It is fronted by Azure API Management and
+    documented through the MediaRadar Client API Portal, which is gated behind client
+    sign-in. Integrations authenticate with a per-client API Key presented as an APIM
+    subscription-key request header. No OpenAPI, Swagger, GraphQL or AsyncAPI
+    contract is published on any MediaRadar-controlled host, and the portal exposes
+    zero APIs and zero products to anonymous visitors, so operation paths, schemas
+    and quotas are not publicly readable.
+  humanURL: https://api-portal.mediaradar.com/
+  baseURL: https://api.mediaradar.com
+  tags:
+  - Advertising Intelligence
+  - Marketing Intelligence
+  - Competitive Intelligence
+  - Advertising
+  - Media
+  - Data
+  properties:
+  - type: DeveloperPortal
+    url: https://api-portal.mediaradar.com/
+  - type: SignUp
+    url: https://api-portal.mediaradar.com/signup-oauth
+  - type: Authentication
+    url: authentication/media-radar-authentication.yml
+  x-base-url-evidence: >-
+    https://api.mediaradar.com was confirmed live on 2026-08-12 as an Azure API
+    Management gateway: an anonymous request to the host root returns APIM's own
+    envelope '{ "statusCode": 404, "message": "Resource not found" }', and
+    /internal-status-0123456789abcdef returns 200 with
+    {"Message":"Service operational","Region":"East US 2","SkuType":"Premium"}. The
+    developer portal's /config.json names the same APIM service
+    (managementApiUrl .../service/mediaradar). Operation paths under this base are
+    not published; the host is recorded, the surface is not.
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -73,8 +108,41 @@ common:
   url: security/media-radar-trust-center.yml
 - type: Compliance
   url: https://trust.mediaradar.com/
+- type: Support
+  url: https://www.mediaradar.com/customer-support
+- type: Conformance
+  url: conformance/media-radar-conformance.yml
+- type: Packages
+  url: packages/media-radar-packages.yml
+- type: LLMsTxt
+  url: llms/media-radar-llms.txt
+- type: Plans
+  url: plans/media-radar-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/media-radar-rate-limits.yml
 x-enrichment:
-  date: '2026-07-20'
-  status: enriched
-  artifacts_added: 3
+  date: '2026-08-12'
+  status: minimal
+  artifacts_added: 7
   pass: local-v1
+x-coverage:
+  state: gated
+  reason: customer-only-docs
+  detail: >-
+    The MediaRadar Client API Portal is an Azure API Management developer portal whose
+    catalog is published to signed-in clients only — its own management endpoint
+    returns an empty collection anonymously
+    (GET /developer/apis?api-version=2022-04-01-preview -> 200 {"value":[],"nextLink":null}),
+    so no endpoint, schema or quota is readable without a MediaRadar client account.
+  evidence:
+  - url: https://api-portal.mediaradar.com/developer/apis?api-version=2022-04-01-preview
+    status: 200
+  - url: https://api-portal.mediaradar.com/developer/products?api-version=2022-04-01-preview
+    status: 200
+  - url: https://api.mediaradar.com/openapi.json
+    status: 404
+  - url: https://api-portal.mediaradar.com/openapi.json
+    status: 404
+  - url: https://www.mediaradar.com/.well-known/agent-card.json
+    status: 404
+  checked: '2026-08-12'

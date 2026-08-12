@@ -1,0 +1,58 @@
+generated: '2026-08-12'
+method: searched
+source: https://trust.mediaradar.com/
+docs: https://trust.mediaradar.com/
+standards:
+- id: soc2-type-1
+  conforms: true
+  evidence: >-
+    Trust center states "We maintain SOC 2 Type I certification, which is
+    independently audited annually by a qualified third-party firm. Our SOC 2 report
+    covers the Trust Services Criteria for Security, Availability, and
+    Confidentiality." The SOC 2 Type 1 Audit Report - 2024 is listed as a requestable
+    document under NDA.
+- id: soc2-type-2
+  conforms: false
+  evidence: Only Type I is claimed; no Type II report is listed or referenced.
+- id: iso-27001
+  conforms: false
+  evidence: Not named anywhere on the trust center.
+- id: pci-dss
+  conforms: false
+  evidence: Not named anywhere on the trust center.
+- id: hipaa
+  conforms: false
+  evidence: Not named anywhere on the trust center.
+- id: fedramp
+  conforms: false
+  evidence: Not named anywhere on the trust center.
+- id: third-party-penetration-testing
+  conforms: true
+  evidence: >-
+    "We engage qualified third-party security firms to conduct penetration testing of
+    our external and internal environments at least annually." A VAPT Pentest
+    Executive Summary - 2026 is listed as a requestable document; certification
+    letters are available to customers under NDA.
+- id: oauth2
+  conforms: false
+  evidence: >-
+    Not applicable to the API surface. The MediaRadar Client API authenticates with a
+    per-client API Key presented as an Azure API Management subscription-key header;
+    no OAuth 2.0 authorization server is published, and
+    /.well-known/oauth-authorization-server 404s on every MediaRadar host. The OAuth
+    sign-up flow on the developer portal (api-portal.mediaradar.com/signup-oauth) is
+    portal account registration, not API authorization.
+- id: rfc9457-problem-details
+  conforms: unknown
+  evidence: >-
+    Cannot be determined. No OpenAPI or error reference is published; the Azure APIM
+    gateway's own unrouted-request envelope is
+    '{ "statusCode": 404, "message": "Resource not found" }', which is APIM's default
+    shape, not a MediaRadar-authored error contract.
+note: >-
+  MediaRadar publishes a real, Secureframe-monitored compliance program with one named
+  certification (SOC 2 Type I) and an annual third-party penetration test, which is
+  why a `Compliance` pointer to https://trust.mediaradar.com/ is wired in apis.yml.
+  API-level protocol conformance (OAuth 2.0, OIDC, RFC 9457, pagination, idempotency)
+  cannot be derived because MediaRadar publishes no machine-readable contract — the
+  Client API Portal exposes zero APIs to anonymous visitors.

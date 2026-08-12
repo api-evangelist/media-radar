@@ -1,0 +1,25 @@
+generated: '2026-08-12'
+method: probed
+source: live probes of mediaradar.com, api-portal.mediaradar.com and mediaradar.statuspage.io
+versioning: null
+deprecation: null
+sla: null
+status_page: null
+deprecated_operations: []
+note: >-
+  MediaRadar publishes no operational-lifecycle surface for its Client API. There is
+  no status page (status.mediaradar.com does not resolve; mediaradar.statuspage.io
+  302s to Atlassian's Statuspage marketing site, which is the classic false positive
+  for that probe), no changelog or release-notes page, no deprecation or sunset
+  policy, and no SLA or uptime commitment on any public URL. The company's XML
+  sitemap carries 1,145 URLs and none of them is a status, changelog, roadmap or SLA
+  page. Because none of these were found, NO StatusPage, Deprecation or ChangeLog
+  pointer is wired into apis.yml — this file is a recorded absence, not a presence.
+  Any versioning or deprecation policy MediaRadar operates is communicated privately
+  to clients through the sign-in-gated Client API Portal.
+evidence:
+- {url: 'https://status.mediaradar.com/', status: 0, note: 'DNS does not resolve'}
+- {url: 'https://mediaradar.statuspage.io/', status: 200, note: 'redirects to https://www.atlassian.com/software/statuspage — vendor marketing page, NOT a MediaRadar status page'}
+- {url: 'https://www.mediaradar.com/status', status: 404}
+- {url: 'https://www.mediaradar.com/changelog', status: 404}
+- {url: 'https://www.mediaradar.com/roadmap', status: 404}

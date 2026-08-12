@@ -1,0 +1,20 @@
+generated: '2026-08-12'
+method: searched
+source: https://www.mediaradar.com/sitemap.xml
+plan_count: 0
+plans: []
+pricing_model: enterprise-contact-sales
+note: >-
+  MediaRadar publishes NO pricing page and NO plans of any kind. /pricing and /plans
+  both return HTTP 404, and the company's full XML sitemap (1,145 URLs, 85 of them
+  non-blog) contains no pricing, plans, packages or tiers page. Commercial entry
+  points are sales-qualified only: /speak-to-a-consultant and the per-product demo
+  request forms (/commercial-intelligence/demo, /creative-intelligence/demo). API
+  access is not sold separately — the Client API is an entitlement of an existing
+  MediaRadar subscription, provisioned as a per-client API Key through the
+  sign-in-gated Client API Portal. Recorded as an honest zero, not an omission.
+evidence:
+- {url: 'https://www.mediaradar.com/pricing', status: 404}
+- {url: 'https://www.mediaradar.com/plans', status: 404}
+- {url: 'https://www.mediaradar.com/sitemap.xml', status: 200, note: 'no pricing/plans URL among 1,145 entries'}
+- {url: 'https://www.mediaradar.com/speak-to-a-consultant', status: 200, note: 'sales-qualified contact, no published price'}

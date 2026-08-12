@@ -1,0 +1,42 @@
+generated: '2026-08-12'
+method: searched
+source: >-
+  registry.npmjs.org, pypi.org, rubygems.org, crates.io, api.nuget.org searched for
+  first-party MediaRadar and Vivvix packages
+packages:
+- language: css
+  registry: npm
+  name: '@mediaradar/design-tokens'
+  url: https://www.npmjs.com/package/@mediaradar/design-tokens
+  install: npm install @mediaradar/design-tokens
+  official: true
+  kind: design-tokens
+  version: 2.0.1
+  published: '2026-08-07'
+  license: Apache-2.0
+  note: >-
+    The only first-party MediaRadar package published to any public registry.
+    Confirmed first-party by its npm maintainer, mediaradar-admin
+    (bob.bernstein@mediaradar.com), publishing under the @mediaradar scope. It is a
+    Style Dictionary build of MediaRadar's design tokens — CSS custom properties, a
+    Tailwind v4 theme, and JS/TS values — NOT a client library for the MediaRadar
+    Client API. Only two versions exist (2.0.0 and 2.0.1, both 2026-08-07); no
+    repository or homepage field is set in the package metadata.
+sdk_count: 0
+registries_searched:
+- {registry: npm, query: 'text=mediaradar / scope:mediaradar', result: 1 package}
+- {registry: npm, query: 'text=vivvix', result: 'no first-party package (vivvix-heatmap-new and vivvix-library are published by globant.com accounts, not by the company)'}
+- {registry: pypi, query: mediaradar, result: 404}
+- {registry: pypi, query: vivvix, result: 404}
+- {registry: rubygems, query: mediaradar, result: 404}
+- {registry: crates.io, query: mediaradar, result: 404}
+- {registry: nuget, query: mediaradar, result: 404}
+note: >-
+  NO official client SDK exists for the MediaRadar Client API in any public package
+  registry, so no `SDKs` pointer is wired into apis.yml — the `sdk_count_1` /
+  `sdk_count_3` checks read a client library and MediaRadar ships none. The API is
+  distributed as a per-client REST surface on Azure API Management with a
+  subscription-key header, and integration is documented only inside the
+  sign-in-gated Client API Portal. The github.com/mediaradar organization exists but
+  publishes zero public repositories, so no source-code distribution channel was
+  found either.

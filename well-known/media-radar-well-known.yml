@@ -1,0 +1,47 @@
+generated: '2026-08-12'
+method: probed
+source: live GET probes of every MediaRadar host named in apis.yml
+note: >-
+  Every /.well-known/ path was probed anonymously on all four MediaRadar-controlled
+  hosts and every one returned HTTP 404. No document was served, so NO WellKnown or
+  SecurityTxt pointer is wired into apis.yml — this file records a verified absence,
+  not a presence. api.mediaradar.com and api.vivvix.com are Azure API Management
+  gateways (they answer with APIM's own
+  '{ "statusCode": 404, "message": "Resource not found" }' envelope), and APIM does
+  not serve /.well-known/ documents unless an operation is explicitly published to
+  that path. www.mediaradar.com is HubSpot CMS-hosted and api-portal.mediaradar.com
+  is the Azure APIM developer portal behind Cloudflare.
+hosts:
+- host: https://www.mediaradar.com
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/oauth-authorization-server, status: 404}
+  - {path: /.well-known/api-catalog, status: 404}
+  - {path: /.well-known/ai-plugin.json, status: 404}
+  - {path: /.well-known/agent-card.json, status: 404}
+  - {path: /.well-known/agent.json, status: 404}
+- host: https://api-portal.mediaradar.com
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/oauth-authorization-server, status: 404}
+  - {path: /.well-known/api-catalog, status: 404}
+  - {path: /.well-known/ai-plugin.json, status: 404}
+  - {path: /.well-known/agent-card.json, status: 404}
+  - {path: /.well-known/agent.json, status: 404}
+- host: https://api.mediaradar.com
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/oauth-authorization-server, status: 404}
+  - {path: /.well-known/api-catalog, status: 404}
+  - {path: /.well-known/ai-plugin.json, status: 404}
+  - {path: /.well-known/agent-card.json, status: 404}
+  - {path: /.well-known/agent.json, status: 404}
+- host: https://www.vivvix.com
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/agent-card.json, status: 404}
+  - {path: /.well-known/agent.json, status: 404}
+found: 0
