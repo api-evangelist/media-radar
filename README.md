@@ -64,6 +64,103 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Media Radar is a company surfaced as a portfolio company of bain-capital-ventures and added to the API Evangelist network as a stub for enrichment. Sector: commerce. This profile is a lead awaiting the enrichment pipeline.
+MediaRadar (now incorporating the data and capabilities of Vivvix) is a marketing and advertising intelligence platform that tracks advertising investment, creative, and brand activity across streaming and linear TV, digital and programmatic, social, retail media, out-of-home, radio, podcast, and print. It serves brands, agencies, publishers, platforms, and consultancies with competitive, commercial, creative, market, and political ad intelligence used to inform mission-critical marketing and sales decisions. MediaRadar delivers its data through a web UX, data feeds, and a client REST API. The MediaRadar Client API Portal is a private Azure API Management developer portal gated behind client sign-in; API endpoints and schemas are not published publicly, and integrations authenticate with a per-client API Key. This profile was surfaced as a portfolio company of Bain Capital Ventures and enriched by the API Evangelist pipeline.
 
-Backed by: bain-capital-ventures — https://mediaradar.com/
+**Areas:** Company · Commerce · Advertising Intelligence · Marketing Intelligence · Competitive Intelligence · Advertising · Media · Data
+
+## Media Radar on APIs.io
+
+Everything profiled for Media Radar is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/media-radar/](https://apis.io/providers/media-radar/)** — or go straight to one of the APIs or properties below.
+
+### APIs (1)
+
+- [MediaRadar Client API](https://apis.io/apis/media-radar/mediaradar-client-api/) — The MediaRadar Client API delivers MediaRadar brand, contacts and advertising data to existing clients over REST. It is fronted by Azure API Management and…
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### Security (3)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Media Radar Authentication](https://apis.io/security/media-radar/media-radar-authentication/)
+- [Media Radar Domain Security](https://apis.io/security/media-radar/media-radar-domain-security/)
+- [Media Radar Trust Center](https://apis.io/security/media-radar/media-radar-trust-center/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Media Radar Plans Pricing](https://apis.io/plans/media-radar/media-radar-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Media Radar Rate Limits](https://apis.io/rate-limits/media-radar/media-radar-rate-limits/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.mediaradar.com/)
+- [Sign up](https://api-portal.mediaradar.com/signin)
+- [Support](https://www.mediaradar.com/customer-support)
+- [Blog](https://www.mediaradar.com/blog)
+- [Compliance](https://trust.mediaradar.com/)
+- [Terms of service](https://www.mediaradar.com/terms)
+- [Privacy policy](https://www.mediaradar.com/privacy)
+
+## API Evangelist rating
+
+**Kin Score 25.1** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 73.2 |
+| Contract quality | 0.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 0.0 |
+| Developer ergonomics | 28.6 |
+| Access clarity | 42.1 |
+
+**Agent readiness 5.0** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 24.5** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/media-radar/](https://apis.io/providers/media-radar/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Media Radar: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/media-radar/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
